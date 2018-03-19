@@ -95,7 +95,7 @@ print(colour_values)
     ## "#F8766D" "#00BFC4"
 
 ``` r
-#is equivalue to 
+#is equivalent to 
 colour_values <- c("#F8766D", "#00BFC4")
 names(colour_values) <- c("0", "1")
 print(colour_values)

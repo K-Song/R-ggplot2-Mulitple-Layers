@@ -1,6 +1,7 @@
-Order of Layers in ggplot2
+Order of Layers in R ggplot2
 ================
 
+Given that most tutorials online do not address the issue of controlling the order of layers in ggplot2 clearly, this document aims to provide thoughts regarding it.
 First, install the plotting package ggplot2 (if it has not been done yet) and load this package. To get most recent version of ggplot2, using most recent version of R is recommended.
 
 ``` r
@@ -76,7 +77,7 @@ In this method, we first sort the dataframe by moving samples with inmetro = 0 t
 ``` r
 order_inmetro<-c("0", "1") #define the order
 midwest_sorted<-midwest[order(match(midwest$inmetro, order_inmetro)),] # sort the rows of dataframe
-midwest_sorted$inmetro<-as.character(midwest_sorted$inmetro) # convert the class of inmetro virable to character
+midwest_sorted$inmetro<-as.character(midwest_sorted$inmetro) # convert the class of inmetro variable to character
 ggplot(data = midwest_sorted, aes(percollege, percpovertyknown, colour = inmetro)) + geom_point(size = 5)+
   scale_color_manual(name = "In metro area", values = c("0" = "#F8766D", "1"="#00BFC4"), labels = c("0" = "0", "1" ="1"))
 ```
